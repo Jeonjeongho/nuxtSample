@@ -3,7 +3,7 @@ const app = require('express')()
 
 app.use(bodyParser.json())
 app.all('/getJSON', (req, res) => {
-  res.json({ data: 'data' })
+  res.json({ data: 'data result' + Math.random() })
 })
 
 module.exports = app
