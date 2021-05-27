@@ -1,3 +1,6 @@
+import serveStatic from 'serve-static'
+
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -41,5 +44,12 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+
+  serverMiddleware: [
+    {
+      path: '/api', handler: "~/api/index.js"
+    },
+    { path: "/server-middleware", handler: "~/server-middleware/rest.js" },
+  ]
 }
