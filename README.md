@@ -1,5 +1,6 @@
 # testnuxt
-
+node -v 14.15.0
+npm -v 6.14.8
 ## Build Setup
 
 ```bash
