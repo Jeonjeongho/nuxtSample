@@ -2,19 +2,25 @@
   <div class="container">
     <div>
       <Logo />
+      <Menu 
+        @componentsApiTestFn="apiTestFn"
+        @componentsMmentFn="momentFn"
+        @componentsGetUsers="getUsers"
+        @childDeadEvent="onDeadEvent"
+      />
       <p>
         {{apiTest}}
       </p>
-      <button type="button" @click="apiTestFn">
-        api Test Btn
-      </button>
-      <button type="button" @click="momentFn">
-        moment Test Btn
-      </button>
-      <button type="button" @click="getUsers">
-        store Test Btn
-      </button>
     </div>
+    <ul>
+      <li v-for="(mountains, index) in mountains" :key="index + mountains.title">
+        {{mountains.title}}
+      </li>
+    </ul>
+    {{url}} {{description}}
+    <p>
+      {{$message.alert.alert01}}
+    </p>
   </div>
 </template>
 
@@ -22,9 +28,26 @@
 
 </style>
 <script>
-import {mapState, mapGetters, mapActions, mapMutations} from 'vuex';
+import MyMixin from '~/mixins/common'
 
 export default {
+  // metaInfo: {
+  //   title: 'My Example App',
+  //   titleTemplate: '%s - Yay!',
+  //   htmlAttrs: {
+  //     // amp: true
+  //   }
+  // },
+  mixins: [MyMixin],
+
+  async asyncData({ $axios, params }) {
+    const api = "https://api.nuxtjs.dev/mountains"
+    const mountains = await $axios.get(api).then((respons) => {
+      return respons.data;
+    });
+
+    return { mountains }
+  },
 
   data() {
     return {
@@ -36,21 +59,23 @@ export default {
     console.log("created");
   },
 
+  computed: {
+    description() {
+      return "description Test"
+    },
+
+    url() {
+      return (process.env.BASE_URL || 'http://localhost:3000') + this.$route.fullPath + Math.random();
+      
+    }
+  },
+
   //computed: mapState(['users']),
 
   methods: {
-    async apiTestFn() {
-      const result = await this.$axios.get("/server-middleware/getJSON");
-      if(result.status == 200) {
-        this.apiTest = result.data.data;
-      }
-    },
-
-    momentFn() {
-      this.apiTest = this.$moment().format("YYYY-DD-MM")
-    },
-
-    ...mapActions(['getUsers'])
+    onDeadEvent(data) {
+      console.log("data", data);
+    }
   },
 }
 </script>
