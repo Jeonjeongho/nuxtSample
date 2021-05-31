@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    pc-index
     <div>
       <Logo />
       <Menu 

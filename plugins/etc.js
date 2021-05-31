@@ -5,8 +5,6 @@ import moment from "moment";
 import {success, fail, error} from "~/codes/network.config";
 import message from "~/codes/message.config";
 
-console.log("message" , message); 
-
 Vue.prototype.$moment = moment;
 
 Vue.prototype.$message = message;

@@ -12,6 +12,8 @@
         <button type="button" @click="childDeadEvent">
             event emit
         </button>
+        <NuxtLink to="/">home</NuxtLink>
+        <NuxtLink to="/test">sub</NuxtLink>
     </nav>
 </template>
 <script>

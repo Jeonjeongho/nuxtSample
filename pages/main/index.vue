@@ -1,35 +1,10 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
-      <Menu 
-        @componentsApiTestFn="apiTestFn"
-        @componentsMmentFn="momentFn"
-        @componentsGetUsers="getUsers"
-        @childDeadEvent="onDeadEvent"
-      />
-      <p>
-        {{apiTest}}
-      </p>
-    </div>
-    <ul>
-      <li v-for="(mountains, index) in mountains" :key="index + mountains.title">
-        {{mountains.title}}
-      </li>
-    </ul>
-    {{url}} {{description}}
-    <p>
-      {{$message.alert.alert01}}
-    </p>
-    <p>
-      {{$store.state.device}}
-    </p>
-    <p>
-      {{$device.isDesktop}}
-    </p>
-    <p>
-      {{$device.isMobile}}
-    </p>
+    <IndexMain 
+      v-if="$device.isDesktop"
+      :mountains="mountains"
+     />
+    <IndexMainMobile v-else />
   </div>
 </template>
 

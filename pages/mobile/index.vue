@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    mobile-index
     <div>
       <Logo />
       <Menu 
