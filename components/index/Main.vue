@@ -20,13 +20,10 @@
       background vue
     </div>
     <div>
-      images 1kb
+      images
       <figure>
         <img src="~/assets/images/common/cover.png" alt="">
       </figure>
-    </div>
-    <div>
-      images 2kb
       <figure>
         <img src="~/assets/images/common/emilio-garcia-lb9hi0NDjT0-unsplash.jpg" alt="">
       </figure>

@@ -1,11 +1,15 @@
 body {
     border: 1px solid red;
+    figure {
+        display: inline-block;
+    }
 
     .bg {
         display: inline-block;
-        width: 200px;
-        height: 200px;
+        width: 100px;
+        height: 100px;
         border: 1px solid blue;
         background-image: url("~/assets/images/common/thumb_d_1174C8BDD2F59CCB55AEA36F4B30F24B.jpg");
+        vertical-align: top;
     }
 }
