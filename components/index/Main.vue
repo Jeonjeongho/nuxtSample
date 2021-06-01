@@ -13,6 +13,24 @@
         {{apiTest}}
       </p>
     </div>
+    <div class="bg">
+      background
+    </div>
+    <div class="bg bg--vue">
+      background vue
+    </div>
+    <div>
+      images 1kb
+      <figure>
+        <img src="~/assets/images/common/cover.png" alt="">
+      </figure>
+    </div>
+    <div>
+      images 2kb
+      <figure>
+        <img src="~/assets/images/common/emilio-garcia-lb9hi0NDjT0-unsplash.jpg" alt="">
+      </figure>
+    </div>
     <ul>
       <li v-for="(mountains, index) in mountains" :key="index + mountains.title">
         {{mountains.title}}
@@ -82,3 +100,17 @@ export default {
   },
 }
 </script>
+<style lang="scss">
+    img {
+      max-width: 200px;
+    }
+    body {
+      .bg {
+
+        &--vue {
+          border: 1px solid red;
+          background-image: url("~/assets/images/common/20180219_Triangle-pattern1_W.jpg");
+        }
+      }
+    }
+</style>

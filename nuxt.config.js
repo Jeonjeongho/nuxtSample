@@ -63,8 +63,20 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    // analyze: true,
+
     splitChunks: {
       layouts: true
+    },
+    //[contenthash:7]
+    filenames: {
+      img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[name].[ext]',
+    },
+    
+    extend (config, { isClient }) {
+      if (isClient) {
+        config.devtool = 'source-map'
+      }
     }
   },
 
