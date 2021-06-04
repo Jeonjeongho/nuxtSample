@@ -14,7 +14,7 @@ export default {
       {
         hid: 'og:url',
         property: 'og:url',
-        content: process.env.BASE_URL || 'http://localhost:3000'
+        content: process.env.BASE_URL || 'http://localhost:8080'
       },{
         hid: 'og:description',
         property: 'og:description',
@@ -35,6 +35,10 @@ export default {
   styleResources: {
     scss: './assets/scss/*.scss'
   },
+
+  // server: {
+  //   host : 0
+  // },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -59,7 +63,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:8080'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
