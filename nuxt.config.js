@@ -1,4 +1,8 @@
 import serveStatic from 'serve-static'
+const envPath = `config/.env.${process.env.NODE_ENV || 'development'}`
+require('dotenv').config({ path: envPath })
+
+console.log("process.env.NODE_ENV process.env.NODE_ENV process.env.NODE_ENV " , process.env.NODE_ENV )
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -37,7 +41,7 @@ export default {
   },
 
   // server: {
-  //   host : 0
+  //   host: "0.0.0.0"
   // },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -63,9 +67,16 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
+  // axios: {
+  //   baseURL: process.env.BASE_URL || 'http://localhost:8080'
+  // },
+
   axios: {
-    baseURL: process.env.BASE_URL || 'http://localhost:8080'
+    baseURL: process.env.REST_API
   },
+
+  
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
