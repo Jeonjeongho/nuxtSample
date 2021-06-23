@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <Menu 
+      <Menu
         @componentsApiTestFn="apiTestFn"
         @componentsMmentFn="momentFn"
         @componentsGetUsers="getUsers"
@@ -49,7 +49,7 @@ export default {
   //   }
   // },
   layout(ctx) {
-    return ctx.$device.isDesktop ? 'pc-default' : 'mobile-default'; 
+    return ctx.$device.isDesktop ? 'pc-default' : 'mobile-default';
   },
 
   mixins: [MyMixin],
@@ -64,7 +64,7 @@ export default {
   },
 
   async fetch() {
-    
+
   },
 
   data() {
@@ -84,7 +84,7 @@ export default {
 
     url() {
       return (process.env.BASE_URL || 'http://localhost:3000') + this.$route.fullPath + Math.random();
-      
+
     }
   },
 

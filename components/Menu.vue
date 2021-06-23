@@ -12,19 +12,22 @@
         <button type="button" @click="childDeadEvent">
             event emit
         </button>
+        <button type="button" @click="objectArrTestBtn">
+            objectArrTestBtn
+        </button>
         <NuxtLink to="/">home</NuxtLink>
         <NuxtLink to="/test">sub</NuxtLink>
     </nav>
 </template>
 <script>
 export default {
-    props: { 
-        isAlive: { 
-            type: Boolean, 
+    props: {
+        isAlive: {
+            type: Boolean,
             default: false
-        } 
+        }
     },
-    methods: { 
+    methods: {
         componentsApiTestFn() {
             this.$emit('componentsApiTestFn', "");
         },
@@ -36,9 +39,12 @@ export default {
         componentsGetUsers() {
             this.$emit('componentsGetUsers', "");
         },
-        childDeadEvent () { 
+        childDeadEvent () {
             this.$emit('childDeadEvent', "data");
-        } 
+        },
+        objectArrTestBtn() {
+          this.$emit('objectArrTestBtn', {dev : 1103, build : 8080});
+        }
     }
 
 }

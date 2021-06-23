@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <IndexMain 
+    <IndexMain
       v-if="$device.isDesktop"
       :mountains="mountains"
      />
@@ -12,8 +12,6 @@
 
 </style>
 <script>
-import MyMixin from '~/mixins/common'
-import {mapState, mapGetters, mapActions, mapMutations} from 'vuex';
 
 export default {
   // metaInfo: {
@@ -24,10 +22,8 @@ export default {
   //   }
   // },
   layout(ctx) {
-    return ctx.$device.isDesktop ? 'pc-default' : 'mobile-default'; 
+    return ctx.$device.isDesktop ? 'pc-default' : 'mobile-default';
   },
-
-  mixins: [MyMixin],
 
   async asyncData({ $axios, params }) {
     const api = "https://api.nuxtjs.dev/mountains"
@@ -39,7 +35,7 @@ export default {
   },
 
   async fetch() {
-    
+
   },
 
   data() {
@@ -59,7 +55,7 @@ export default {
 
     url() {
       return (process.env.BASE_URL || 'http://localhost:3000') + this.$route.fullPath + Math.random();
-      
+
     }
   },
 

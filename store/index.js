@@ -1,22 +1,19 @@
-
-//state
 export const state = () => ({
   users: [],
   device: "device Test"
 });
 //getters
-export const getters = {};
+export const getters = {
+  doubleCounter: (state) => {
+    return state.device + Math.random();
+  }
+};
 
 //actions Asynchronous communication
 export const actions = {
   async getUsers() {
     const users = await this.$axios.get("/server-middleware/userJSON");
     //commit("addUsers" , users);
-    console.log(
-      "!!!!!!!!!!!!!s!!!!!!!!!!!!!!s!!!!!!!!!!!!!!s!!!!!!!!!!!!!!s!!!!!!!!!!!!!!s!!!!!!!!!!!!!!!",
-      users
-    );
-
     return users;
   },
 

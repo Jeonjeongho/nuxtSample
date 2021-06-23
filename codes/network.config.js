@@ -1,21 +1,36 @@
-const success = {
-    restApl: {
-
+const network = {
+    success: {
+      inside: 200
     },
-};
-
-
-const fail = {
-    restApl: {
-
+  
+    fail : {
+        "alert01" : "message global test"
     },
-};
-
-
-const error = {
-    restApl: {
-
-    },
-};
-
-export {success, fail, error};
+  
+    error : {
+  
+    }
+  };
+  
+  const success = {
+      restApl: {
+        inside: 200
+      },
+  };
+  
+  
+  const fail = {
+      restApl: {
+  
+      },
+  };
+  
+  
+  const error = {
+      restApl: {
+  
+      },
+  };
+  
+  export {success, fail, error, network};
+  

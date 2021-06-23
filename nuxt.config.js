@@ -47,6 +47,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     "~/plugins/etc",
+    "~/plugins/axios",
     { src: '~/plugins/clientEtc.js', mode: 'client' }
   ],
 
@@ -75,7 +76,7 @@ export default {
     baseURL: process.env.REST_API
   },
 
-  
+
 
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -89,7 +90,7 @@ export default {
     filenames: {
       img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[name].[ext]',
     },
-    
+
     extend (config, { isClient }) {
       if (isClient) {
         config.devtool = 'source-map'
