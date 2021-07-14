@@ -1,7 +1,7 @@
 import {mapState, mapGetters, mapActions, mapMutations} from 'vuex';
 let commonMixin = {
     mounted() {
-        console.log('Mixed mounted!')
+        console.log('Mixed mounted!!')
     },
 
     methods: {
